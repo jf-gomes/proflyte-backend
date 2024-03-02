@@ -5,6 +5,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userName: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
@@ -13,17 +17,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    invites: {
+    img: {
+        type: String,
+        default: ""
+    },
+    about: {
+        type: String,
+        default: "Sem descrição."
+    },
+    posts: {
         type: Array,
         default: []
-    },
-    messages: {
-        type: Array,
-        default: []
-    },
-    newsletter: {
-        type: Boolean,
-        required: true
     },
     createdAt: {
         type: Date,

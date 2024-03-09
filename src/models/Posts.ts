@@ -22,6 +22,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     createdBy: {
+        //User id
         type: String,
         required: true
     },

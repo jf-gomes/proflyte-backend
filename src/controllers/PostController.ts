@@ -17,8 +17,14 @@ async function getPosts(req: any, res: any){
     }
 }
 
+async function editPost(req: any, res: any){
+    const id = req.params.id
+    await Posts.updateOne({ _id: id }, req.body)
+    return res.status(200).json({ response: 'User edited' })
+}
 
 export {
     createPost,
-    getPosts
+    getPosts,
+    editPost
 }

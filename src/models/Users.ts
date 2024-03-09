@@ -25,10 +25,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "Sem descrição."
     },
-    posts: {
-        type: Array,
-        default: []
-    },
     createdAt: {
         type: Date,
         default: Date.now()

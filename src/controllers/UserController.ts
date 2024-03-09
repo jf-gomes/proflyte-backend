@@ -56,10 +56,24 @@ async function login(req: any, res: any){
     }
 }
 
+async function editUser(req: any, res: any){
+    const id = req.params.id
+    await Users.updateOne({ _id: id }, req.body)
+    return res.status(200).json({ response: 'User edited' })
+}
+
+async function delUser(req: any, res: any){
+    const id = req.params.id
+    await Users.findByIdAndDelete({ _id: id })
+    return res.status(201).json({ response: 'User removed' })
+}
+
 export {
     getUsers,
     createUser,
     createPost,
     userPosts,
-    login
+    login,
+    editUser,
+    delUser
 }
